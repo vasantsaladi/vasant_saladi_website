@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { Mail } from "lucide-react";
 import {
   SignInButton,
   SignUpButton,
@@ -11,6 +12,10 @@ import {
 import { Button } from "@/components/ui/button";
 
 export function SiteHeader() {
+  const scrollToSection = (sectionId: string) => {
+    document.getElementById(sectionId)?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-14 items-center justify-between">
@@ -19,33 +24,31 @@ export function SiteHeader() {
             Vasant Saladi
           </Link>
           <nav className="hidden md:flex items-center space-x-6 text-sm font-medium">
-            <Link
-              href="/"
-              className="transition-colors hover:text-foreground/80 text-foreground"
-            >
-              Home
-            </Link>
-            <Link
-              href="/about"
+            <button
+              onClick={() => scrollToSection("about")}
               className="transition-colors hover:text-foreground/80 text-foreground"
             >
               About
-            </Link>
-            <Link
-              href="/projects"
+            </button>
+            <button
+              onClick={() => scrollToSection("projects")}
               className="transition-colors hover:text-foreground/80 text-foreground"
             >
               Projects
-            </Link>
-            <Link
-              href="/contact"
-              className="transition-colors hover:text-foreground/80 text-foreground"
-            >
-              Contact
-            </Link>
+            </button>
           </nav>
         </div>
-        <div className="flex items-center space-x-2">
+        <div className="flex items-center gap-4">
+          <Button
+            className="bg-[#111] text-white hover:bg-[#222] hidden md:flex"
+            size="sm"
+            asChild
+          >
+            <Link href="mailto:vasantsaladi@gmail.com">
+              <Mail className="mr-2 h-4 w-4" />
+              Contact Me
+            </Link>
+          </Button>
           <SignedOut>
             <SignInButton mode="modal">
               <Button variant="ghost" size="sm">
