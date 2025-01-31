@@ -51,16 +51,19 @@ export function SiteHeader() {
           </Button>
           {/* <SignedOut>
             <SignInButton mode="modal">
-              <Button variant="ghost" size="sm">
-                <span className="md:hidden">Sign In</span>
-                <span className="hidden md:inline">Sign In</span>
+              <Button
+                variant="ghost"
+                size="sm"
+                className="font-medium hover:bg-accent hover:text-accent-foreground"
+              >
+                Sign In
               </Button>
             </SignInButton>
             <SignUpButton mode="modal">
               <Button
                 variant="default"
                 size="sm"
-                className="hidden md:inline-flex"
+                className="bg-[#111] text-white hover:bg-[#222] hidden md:inline-flex"
               >
                 Sign Up
               </Button>
