@@ -4,6 +4,13 @@ import { Button } from "./ui/button";
 import { FileText, Github, Linkedin, Trophy, ChevronDown } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
+import { motion } from "framer-motion";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "./ui/tooltip";
 
 export function HeroSection() {
   const scrollToProjects = () => {
@@ -11,87 +18,126 @@ export function HeroSection() {
   };
 
   return (
-    <>
-      <div className="container flex min-h-[calc(100vh-3.5rem)] flex-col-reverse md:flex-row items-center justify-between py-8 md:py-12 gap-8">
-        <div className="flex flex-col gap-6 md:gap-8 max-w-[600px] text-center md:text-left">
-          <h1 className="text-4xl md:text-5xl font-bold tracking-tight">
-            Data Engineer | Data Analyst | Data Scientist
-          </h1>
-          <div id="about">
-            <p className="text-xl text-muted-foreground/80">
-              Hello, I'm Vasant, a Computer and Information Science student at
-              the University of Maryland, specializing in Data Science.
-            </p>
-            <p className="text-lg text-muted-foreground mt-4">
-              I'm passionate about leveraging technology to solve real-world
-              problems through data science and machine learning. Contact me if
-              you'd like to work together!
-            </p>
-          </div>
-          <div className="flex flex-wrap justify-center md:justify-start gap-3 mt-4">
-            <Button
-              variant="outline"
-              className="rounded-full px-6 border-[#111]"
-              asChild
-            >
-              <Link href="/cv.pdf" target="_blank">
-                <FileText className="mr-2 h-4 w-4" />
-                Resume
-              </Link>
-            </Button>
-            <Button
-              variant="outline"
-              className="rounded-full px-6 border-[#111]"
-              asChild
-            >
-              <Link href="https://github.com/vasantsaladi" target="_blank">
-                <Github className="mr-2 h-4 w-4" />
-                GitHub
-              </Link>
-            </Button>
-            <Button
-              variant="outline"
-              className="rounded-full px-6 border-[#111]"
-              asChild
-            >
-              <Link href="https://linkedin.com/in/vasantsaladi" target="_blank">
-                <Linkedin className="mr-2 h-4 w-4" />
-                LinkedIn
-              </Link>
-            </Button>
-            <Button
-              variant="outline"
-              className="rounded-full px-6 border-[#111]"
-              asChild
-            >
-              <Link href="https://devpost.com/vasantsaladi" target="_blank">
-                <Trophy className="mr-2 h-4 w-4" />
-                Devpost
-              </Link>
-            </Button>
-          </div>
+    <motion.section
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+      className="container flex min-h-[calc(100vh-3.5rem)] flex-col-reverse md:flex-row items-center justify-between py-8 md:py-12 gap-8"
+    >
+      <div className="flex flex-col gap-6 md:gap-8 max-w-[600px] text-center md:text-left">
+        <motion.h1
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.2 }}
+          className="text-4xl md:text-5xl font-bold tracking-tight leading-tight"
+        >
+          Software Engineer | Data Engineer | Data Scientist
+        </motion.h1>
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.4 }}
+          id="about"
+          className="space-y-4"
+        >
+          <p className="text-xl text-muted-foreground/80">
+            Hello, I&apos;m Vasant, a Computer and Information Science student
+            at the University of Maryland, specializing in Data Science.
+          </p>
+          <p className="text-lg text-muted-foreground">
+            3x Hackathon winner with experience in AI-driven platforms and
+            machine learning solutions. Currently seeking full-time
+            opportunities in Software Engineering, Data Engineering, Analytics,
+            and Data Science.
+          </p>
+        </motion.div>
+        <TooltipProvider>
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.6 }}
+            className="flex flex-wrap justify-center md:justify-start gap-3 mt-4"
+          >
+            {[
+              {
+                href: "https://vasantresume.tiiny.site",
+                icon: FileText,
+                label: "Resume",
+                tooltip: "View my resume",
+              },
+              {
+                href: "https://github.com/vasantsaladi",
+                icon: Github,
+                label: "GitHub",
+                tooltip: "Check out my projects",
+              },
+              {
+                href: "https://linkedin.com/in/vs6",
+                icon: Linkedin,
+                label: "LinkedIn",
+                tooltip: "Connect with me",
+              },
+              {
+                href: "https://devpost.com/vsaladi",
+                icon: Trophy,
+                label: "Devpost",
+                tooltip: "See my hackathon wins",
+              },
+            ].map(({ href, icon: Icon, label, tooltip }) => (
+              <Tooltip key={label}>
+                <TooltipTrigger asChild>
+                  <Button
+                    variant="outline"
+                    className="rounded-full px-6 border-[#111] hover:bg-[#111] hover:text-white transition-colors"
+                    asChild
+                  >
+                    <Link href={href} target="_blank" rel="noopener noreferrer">
+                      <Icon className="mr-2 h-4 w-4" />
+                      {label}
+                    </Link>
+                  </Button>
+                </TooltipTrigger>
+                <TooltipContent>{tooltip}</TooltipContent>
+              </Tooltip>
+            ))}
+          </motion.div>
+        </TooltipProvider>
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.8 }}
+        >
           <Button
-            variant="ghost"
-            className="mt-4 mx-auto md:mx-0"
+            variant="default"
+            size="lg"
+            className="mt-4 mx-auto md:mx-0 bg-[#111] hover:bg-[#222] text-white rounded-full px-8 transition-colors"
             onClick={scrollToProjects}
           >
-            <ChevronDown className="h-6 w-6" />
-            View Projects
+            <ChevronDown className="mr-2 h-5 w-5" />
+            View My Projects
           </Button>
-        </div>
-
-        <div className="relative w-[280px] h-[280px] md:w-[400px] md:h-[400px]">
-          <div className="absolute inset-0 bg-[#f5f5f5] rounded-full overflow-hidden">
-            <Image
-              src="/hero.png"
-              alt="Profile photo"
-              fill
-              className="object-cover"
-              priority
-            />
-          </div>
-        </div>
+        </motion.div>
       </div>
-    </>
+
+      <motion.div
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ delay: 0.2, type: "spring" }}
+        className="relative w-[280px] h-[280px] md:w-[400px] md:h-[400px]"
+      >
+        <div className="absolute inset-0 bg-[#f5f5f5] rounded-full overflow-hidden">
+          <Image
+            src="/images/my_pics/hero.png"
+            alt="Profile photo of Vasant Saladi"
+            fill
+            sizes="(max-width: 768px) 280px, 400px"
+            className="object-cover"
+            priority
+            quality={90}
+            loading="eager"
+          />
+        </div>
+      </motion.div>
+    </motion.section>
   );
 }

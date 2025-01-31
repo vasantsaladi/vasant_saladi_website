@@ -10,6 +10,7 @@ import {
   UserButton,
 } from "@clerk/nextjs";
 import { Button } from "@/components/ui/button";
+import { ModeToggle } from "./mode-toggle";
 
 export function SiteHeader() {
   const scrollToSection = (sectionId: string) => {
@@ -38,25 +39,29 @@ export function SiteHeader() {
             </button>
           </nav>
         </div>
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-2">
           <Button
-            className="bg-[#111] text-white hover:bg-[#222] hidden md:flex"
+            className="bg-[#111] text-white hover:bg-[#222] text-sm"
             size="sm"
-            asChild
+            onClick={() => scrollToSection("contact")}
           >
-            <Link href="mailto:vasantsaladi@gmail.com">
-              <Mail className="mr-2 h-4 w-4" />
-              Contact Me
-            </Link>
+            <Mail className="mr-2 h-4 w-4 md:inline-block" />
+            <span className="hidden md:inline">Contact Me</span>
+            <span className="md:hidden">Contact</span>
           </Button>
           <SignedOut>
             <SignInButton mode="modal">
               <Button variant="ghost" size="sm">
-                Sign In
+                <span className="md:hidden">Sign In</span>
+                <span className="hidden md:inline">Sign In</span>
               </Button>
             </SignInButton>
             <SignUpButton mode="modal">
-              <Button variant="default" size="sm">
+              <Button
+                variant="default"
+                size="sm"
+                className="hidden md:inline-flex"
+              >
                 Sign Up
               </Button>
             </SignUpButton>
@@ -64,6 +69,7 @@ export function SiteHeader() {
           <SignedIn>
             <UserButton afterSignOutUrl="/" />
           </SignedIn>
+          <ModeToggle />
         </div>
       </div>
     </header>
