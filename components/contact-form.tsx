@@ -27,7 +27,7 @@ export function ContactForm() {
       console.log("Form submitted:", { email, message });
       setIsSubmitted(true);
       e.currentTarget.reset();
-    } catch (_) {
+    } catch {
       setError("Something went wrong. Please try again later.");
     } finally {
       setIsSubmitting(false);
