@@ -2,13 +2,13 @@
 
 import Link from "next/link";
 import { Mail } from "lucide-react";
-import {
-  SignInButton,
-  SignUpButton,
-  SignedIn,
-  SignedOut,
-  UserButton,
-} from "@clerk/nextjs";
+// import {
+//   SignInButton,
+//   SignUpButton,
+//   SignedIn,
+//   SignedOut,
+//   UserButton,
+// } from "@clerk/nextjs";
 import { Button } from "@/components/ui/button";
 import { ModeToggle } from "./mode-toggle";
 
@@ -49,7 +49,7 @@ export function SiteHeader() {
             <span className="hidden md:inline">Contact Me</span>
             <span className="md:hidden">Contact</span>
           </Button>
-          <SignedOut>
+          {/* <SignedOut>
             <SignInButton mode="modal">
               <Button variant="ghost" size="sm">
                 <span className="md:hidden">Sign In</span>
@@ -68,7 +68,7 @@ export function SiteHeader() {
           </SignedOut>
           <SignedIn>
             <UserButton afterSignOutUrl="/" />
-          </SignedIn>
+          </SignedIn> */}
           <ModeToggle />
         </div>
       </div>
