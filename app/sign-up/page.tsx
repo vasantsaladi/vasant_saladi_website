@@ -1,16 +1,12 @@
-import { SignUp } from "@clerk/nextjs";
-
 export default function SignUpPage() {
   return (
     <div className="flex min-h-screen items-center justify-center">
-      <SignUp
-        appearance={{
-          elements: {
-            rootBox: "mx-auto",
-            card: "bg-background shadow-none border rounded-lg",
-          },
-        }}
-      />
+      <div className="p-8 text-center">
+        <h1 className="text-2xl font-bold mb-4">Sign Up</h1>
+        <p className="text-muted-foreground">
+          Authentication is temporarily disabled.
+        </p>
+      </div>
     </div>
   );
 }
