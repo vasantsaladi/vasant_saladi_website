@@ -1,7 +1,7 @@
 "use client";
 
 import { Button } from "./ui/button";
-import { FileText, Github, Linkedin, Trophy, ChevronDown } from "lucide-react";
+import { Github, Linkedin, Trophy, ChevronDown } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
@@ -31,7 +31,7 @@ export function HeroSection() {
           transition={{ delay: 0.2 }}
           className="text-4xl md:text-5xl font-bold tracking-tight leading-tight"
         >
-          Software Engineer | Data Engineer | Data Scientist
+          Software Engineer | Data Analytics | Data Scientist
         </motion.h1>
         <motion.div
           initial={{ opacity: 0 }}
@@ -45,10 +45,9 @@ export function HeroSection() {
             at the University of Maryland, specializing in Data Science.
           </p>
           <p className="text-lg text-muted-foreground">
-            3x Hackathon winner with experience in AI-driven platforms and
-            machine learning solutions. Currently seeking full-time
-            opportunities in Software Engineering, Data Engineering, Analytics,
-            and Data Science.
+            4x Hackathon winner with experience in AI-driven platforms and
+            data-driven solutions. Currently seeking full-time opportunities in
+            Software Engineering, Data Engineering, Data Analytics.
           </p>
         </motion.div>
         <TooltipProvider>
@@ -59,12 +58,6 @@ export function HeroSection() {
             className="flex flex-wrap justify-center md:justify-start gap-3 mt-4"
           >
             {[
-              {
-                href: "https://vasantresume.tiiny.site",
-                icon: FileText,
-                label: "Resume",
-                tooltip: "View my resume",
-              },
               {
                 href: "https://github.com/vasantsaladi",
                 icon: Github,

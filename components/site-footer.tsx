@@ -1,6 +1,6 @@
 "use client";
 
-import { Github, Linkedin, FileText, Trophy } from "lucide-react";
+import { Github, Linkedin, Trophy } from "lucide-react";
 import Link from "next/link";
 import { ContactForm } from "./contact-form";
 
@@ -22,12 +22,6 @@ const socialLinks = [
     href: "https://devpost.com/vsaladi",
     label: "Devpost",
     description: "View my hackathon projects",
-  },
-  {
-    icon: FileText,
-    href: "https://vasantresume.tiiny.site",
-    label: "Resume",
-    description: "Download my resume",
   },
 ];
 

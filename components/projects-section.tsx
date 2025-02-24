@@ -11,7 +11,7 @@ import {
   CardFooter,
 } from "./ui/card";
 import { Badge } from "./ui/badge";
-import { Github, Link as LinkIcon } from "lucide-react";
+import { Github, Link as LinkIcon, Linkedin } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
@@ -31,6 +31,24 @@ type ProjectCategory = Exclude<Category, "All">;
 
 // Projects data
 const PROJECTS: Project[] = [
+  {
+    title: "FORG3D",
+    description:
+      "3rd Place at CMU TartanHacks 2025 (Blockchain Track). Built a blockchain-powered marketplace using Story Protocol to protect digital creators' intellectual property in the $22B 3D modeling industry, featuring secure asset authentication and IP management.",
+    tags: ["Blockchain", "3D Modeling", "IP Protection"],
+    categories: ["Software Engineering", "Data Engineering"],
+    githubUrl: "https://github.com/vasantsaladi/cmu_hackathon",
+    linkedInUrl:
+      "https://www.linkedin.com/posts/activity-7295651967895293952-T_b7",
+    technologies: [
+      "Story Protocol",
+      "Next.js",
+      "Three.js",
+      "TypeScript",
+      "Clerk Web3",
+    ],
+    image: "/images/projects/FORG3D.png",
+  },
   {
     title: "GroceryLink DC",
     description:
@@ -122,6 +140,7 @@ type Project = {
   categories: ProjectCategory[];
   githubUrl: string;
   liveUrl?: string;
+  linkedInUrl?: string;
   technologies: string[];
   image: string;
 };
@@ -242,6 +261,23 @@ const ProjectCard = ({
               >
                 <LinkIcon className="mr-2 h-4 w-4" />
                 Demo
+              </Link>
+            </Button>
+          )}
+          {project.linkedInUrl && (
+            <Button
+              variant="outline"
+              size="lg"
+              className="flex-1 font-medium hover:bg-gray-100 transition-colors"
+              asChild
+            >
+              <Link
+                href={project.linkedInUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Linkedin className="mr-2 h-4 w-4" />
+                Post
               </Link>
             </Button>
           )}
