@@ -1,7 +1,7 @@
 "use client";
 
 import { Button } from "./ui/button";
-import { Github, Linkedin, Trophy, ChevronDown } from "lucide-react";
+import { Github, Linkedin, Trophy, ChevronDown, FileText } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
@@ -75,6 +75,12 @@ export function HeroSection() {
                 icon: Trophy,
                 label: "Devpost",
                 tooltip: "See my hackathon wins",
+              },
+              {
+                href: "https://vasantsaladiresume.tiiny.site",
+                icon: FileText,
+                label: "Resume",
+                tooltip: "View my resume",
               },
             ].map(({ href, icon: Icon, label, tooltip }) => (
               <Tooltip key={label}>
