@@ -32,6 +32,34 @@ type ProjectCategory = Exclude<Category, "All">;
 // Projects data
 const PROJECTS: Project[] = [
   {
+    title: "Canvas Assistant",
+    description:
+      "Winner of SmallTalk Mini Category at HenHacks 2025. Built a smart dashboard for students to manage coursework using Smalltalk-based visualization components. Features AI-powered content summaries, study pattern analytics, and productivity tracking with OAuth integration.",
+    tags: ["Education", "Data Visualization", "AI"],
+    categories: ["Software Engineering", "Analytics"],
+    githubUrl: "https://github.com/vasantsaladi/ud_hacks",
+    liveUrl: "https://devpost.com/software/canvas-assistant-ruh6i4",
+    technologies: [
+      "Next.js",
+      "Smalltalk",
+      "FastAPI",
+      "Google Gemini",
+      "Canvas OAuth",
+    ],
+    image: "/images/projects/canvas_assistant.png",
+  },
+  {
+    title: "WasteWatch",
+    description:
+      "ML-powered platform helping restaurants predict and reduce food waste, analyzing factors like location, temperature, food type, and historical data. Achieved 78% prediction accuracy using Random Forest on 7,500+ restaurant waste records.",
+    tags: ["Machine Learning", "Sustainability", "Analytics"],
+    categories: ["Data Engineering", "Analytics"],
+    githubUrl: "https://github.com/vasantsaladi/Hoo_Hacks",
+    liveUrl: "https://devpost.com/software/wastewatch-81zpcf",
+    technologies: ["Python", "Next.js", "FastAPI", "scikit-learn", "OpenAI"],
+    image: "/images/projects/wastewatch.png",
+  },
+  {
     title: "FORG3D",
     description:
       "3rd Place at CMU TartanHacks 2025 (Blockchain Track). Built a blockchain-powered marketplace using Story Protocol to protect digital creators' intellectual property in the $22B 3D modeling industry, featuring secure asset authentication and IP management.",
