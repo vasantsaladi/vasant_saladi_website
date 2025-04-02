@@ -24,7 +24,7 @@ const socialLinks = [
     description: "See my hackathon wins",
   },
   {
-    href: "https://vasantsaladiresume.tiiny.site",
+    href: "",
     icon: FileText,
     label: "Resume",
     description: "View my resume",
