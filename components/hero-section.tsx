@@ -77,7 +77,7 @@ export function HeroSection() {
                 tooltip: "See my hackathon wins",
               },
               {
-                href: "https://vasantsaladiresume.tiiny.site",
+                href: "",
                 icon: FileText,
                 label: "Resume",
                 tooltip: "View my resume",
