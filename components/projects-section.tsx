@@ -32,9 +32,26 @@ type ProjectCategory = Exclude<Category, "All">;
 // Projects data
 const PROJECTS: Project[] = [
   {
+    title: "Page2Pixel",
+    description:
+      "Winner at HackHounds 2025. Chrome extension that transforms webpages into AI-generated visual summaries using GPT-4o and DALL-E 3, providing instant insights at a glance right in your browser.",
+    tags: ["AI", "Chrome Extension", "Visual Summaries"],
+    categories: ["Software Engineering", "Analytics"],
+    githubUrl: "https://github.com/vasantsaladi/hackhounds",
+    liveUrl: "https://devpost.com/software/page2pixel",
+    technologies: [
+      "React",
+      "TypeScript",
+      "FastAPI",
+      "OpenAI",
+      "Chrome Extension API",
+    ],
+    image: "/images/projects/page2pixel.png",
+  },
+  {
     title: "Canvas Assistant",
     description:
-      "Winner of SmallTalk Mini Category at HenHacks 2025. Built a smart dashboard for students to manage coursework using Smalltalk-based visualization components. Features AI-powered content summaries, study pattern analytics, and productivity tracking with OAuth integration.",
+      "Winner at HenHacks 2025. Smart dashboard for students to manage coursework with Smalltalk visualization. Features AI-powered content summaries, study analytics, and productivity tracking with Canvas OAuth integration.",
     tags: ["Education", "Data Visualization", "AI"],
     categories: ["Software Engineering", "Analytics"],
     githubUrl: "https://github.com/vasantsaladi/ud_hacks",
@@ -51,7 +68,7 @@ const PROJECTS: Project[] = [
   {
     title: "WasteWatch",
     description:
-      "ML-powered platform helping restaurants predict and reduce food waste, analyzing factors like location, temperature, food type, and historical data. Achieved 78% prediction accuracy using Random Forest on 7,500+ restaurant waste records.",
+      "ML-powered platform helping restaurants predict and reduce food waste. Analyzes location, temperature, and historical data with 78% prediction accuracy using Random Forest on 7,500+ restaurant waste records.",
     tags: ["Machine Learning", "Sustainability", "Analytics"],
     categories: ["Data Engineering", "Analytics"],
     githubUrl: "https://github.com/vasantsaladi/Hoo_Hacks",
@@ -62,7 +79,7 @@ const PROJECTS: Project[] = [
   {
     title: "FORG3D",
     description:
-      "3rd Place at CMU TartanHacks 2025 (Blockchain Track). Built a blockchain-powered marketplace using Story Protocol to protect digital creators' intellectual property in the $22B 3D modeling industry, featuring secure asset authentication and IP management.",
+      "3rd Place at CMU TartanHacks 2025. Blockchain-powered marketplace using Story Protocol to protect digital creators' IP in the 3D modeling industry, with secure asset authentication and IP management.",
     tags: ["Blockchain", "3D Modeling", "IP Protection"],
     categories: ["Software Engineering", "Data Engineering"],
     githubUrl: "https://github.com/vasantsaladi/cmu_hackathon",
@@ -80,7 +97,7 @@ const PROJECTS: Project[] = [
   {
     title: "GroceryLink DC",
     description:
-      "A geospatial simulator using Mapbox and DC Open Data to optimize grocery store placements, improving food access by modeling resident movement and store impact in underserved communities.",
+      "Geospatial simulator using Mapbox and DC Open Data to optimize grocery store placements. Improves food access by modeling resident movement and store impact in underserved communities.",
     tags: ["GIS", "Urban Planning", "Data Analysis"],
     categories: ["Analytics", "Software Engineering"],
     githubUrl: "https://github.com/vasantsaladi/gtown_hack",
@@ -102,7 +119,7 @@ const PROJECTS: Project[] = [
   {
     title: "GCCI Partnerships",
     description:
-      "Winner of York College Innovation Challenge. Built a digital platform for the Graham Center to streamline industry partnerships using Streamlit and OpenAI, featuring AI-powered partner matching and collaboration suggestions.",
+      "Winner of York College Innovation Challenge. Digital platform for the Graham Center to streamline industry partnerships using Streamlit and OpenAI with AI-powered partner matching.",
     tags: ["AI", "Platform", "Partnerships"],
     categories: ["Software Engineering", "Analytics"],
     githubUrl: "https://github.com/vasantsaladi/gcci",

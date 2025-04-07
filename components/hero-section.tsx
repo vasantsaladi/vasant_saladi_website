@@ -45,7 +45,7 @@ export function HeroSection() {
             at the University of Maryland, specializing in Data Science.
           </p>
           <p className="text-lg text-muted-foreground">
-            5x Hackathon winner with experience in AI-driven platforms and
+            7 x Hackathon winner with experience in AI-driven platforms and
             data-driven solutions. Currently seeking full-time opportunities in
             Software Engineering, Data Engineering, Data Analytics.
           </p>
